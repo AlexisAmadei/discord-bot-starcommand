@@ -1,6 +1,15 @@
 node_modules
 .env
+.env.*
+!.env.example
 credentials
 config.json
 help.txt
 voiceHubs.json
+
+# SvelteKit / Vite
+.svelte-kit
+build
+.vercel
+.netlify
+dist
