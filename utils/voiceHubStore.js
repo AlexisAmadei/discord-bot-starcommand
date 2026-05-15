@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const STORE_PATH = path.join(__dirname, '..', 'voiceHubs.json');
+const STORE_PATH = process.env.VOICE_HUB_STORE || path.join(__dirname, '..', 'voiceHubs.json');
 
 function load() {
     try {

@@ -1,0 +1,16 @@
+services:
+  starcommand:
+    build: .
+    container_name: starcommand
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - starcommand-data:/app/data
+    environment:
+      - VOICE_HUB_STORE=/app/data/voiceHubs.json
+    stdin_open: true
+    tty: true
+
+volumes:
+  starcommand-data:

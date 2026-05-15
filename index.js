@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const config = require('./config.json');
-const token = config.token.trim();
+const config = require('./utils/config.js');
+const token = config.token;
 
 const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const readTerminal = require('./utils/readTerminal.js');
