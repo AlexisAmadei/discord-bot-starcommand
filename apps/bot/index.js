@@ -1,7 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const config = require('./utils/config.js');
-const token = config.token;
+require('dotenv').config();
+
+const token = (process.env.DISCORD_TOKEN || '').trim();
 
 const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const readTerminal = require('./utils/readTerminal.js');
@@ -62,6 +63,11 @@ for (const folder of commandFolder) {
 }
 
 voiceHub.register(client);
+
+if (!token) {
+    console.error('Missing DISCORD_TOKEN in .env file.');
+    process.exit(1);
+}
 
 client.login(token);
 client.on('error', console.error);
