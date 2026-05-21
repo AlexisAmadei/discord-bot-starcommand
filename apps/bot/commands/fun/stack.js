@@ -252,16 +252,32 @@ async function handleCreate(interaction) {
         }
     }
 
-    const count = poolCount(guildId);
-
     if (users.length === 0) {
-        if (count > 0) {
-            return interaction.reply({
-                content: `Pool already exists with ${count} player${count !== 1 ? 's' : ''}. Use \`/stack list\` to see them.`,
-                ephemeral: true,
-            });
-        }
-        return interaction.reply('Empty pool created. Use `/stack add @user` to add players.');
+        const msg = await interaction.reply({
+            content: '✅ React below to join the five-stack pool! (open for 10 minutes)',
+            fetchReply: true,
+        });
+        await msg.react('✅');
+
+        const filter = (reaction, user) => reaction.emoji.name === '✅' && !user.bot;
+        const collector = msg.createReactionCollector({ filter, dispose: true, time: 10 * 60 * 1000 });
+
+        collector.on('collect', (_, user) => {
+            addPlayers(guildId, [{ id: user.id, username: user.username }]);
+        });
+
+        collector.on('remove', (_, user) => {
+            removePlayer(guildId, user.id);
+        });
+
+        collector.on('end', async () => {
+            const pool = listPool(guildId);
+            try {
+                await msg.edit(`Pool closed — **${pool.length}** player${pool.length !== 1 ? 's' : ''} signed up.`);
+            } catch {}
+        });
+
+        return;
     }
 
     const { added, skipped } = addPlayers(guildId, users);
@@ -425,21 +441,30 @@ async function handleConfig(interaction) {
 // ---------------------------------------------------------------------------
 
 async function autocomplete(interaction) {
-    const focused = interaction.options.getFocused().toLowerCase();
-    const pool = listPool(interaction.guildId);
+    const focused = interaction.options.getFocused();
 
-    // Exclude IDs already chosen in other user slots of this invocation
     const chosen = new Set();
     for (let i = 1; i <= 10; i++) {
         const val = interaction.options.getString(`user${i}`);
         if (val) chosen.add(val);
     }
 
-    const choices = pool
-        .filter(p => !chosen.has(p.user_id))
-        .filter(p => p.username.toLowerCase().includes(focused))
-        .slice(0, 25)
-        .map(p => ({ name: p.username, value: p.user_id }));
+    let members = [];
+    try {
+        if (focused.length > 0) {
+            const result = await interaction.guild.members.search({ query: focused, limit: 25 });
+            members = [...result.values()];
+        } else {
+            members = [...interaction.guild.members.cache.values()];
+        }
+    } catch {
+        return interaction.respond([]);
+    }
+
+    const choices = members
+        .filter(m => !m.user.bot && !chosen.has(m.id))
+        .map(m => ({ name: m.displayName || m.user.username, value: m.id }))
+        .slice(0, 25);
 
     await interaction.respond(choices);
 }
