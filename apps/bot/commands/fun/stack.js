@@ -14,11 +14,6 @@ const data = new SlashCommandBuilder()
     .setDescription('Valorant five-stack pool manager')
     .addSubcommand(sub => {
         sub.setName('create').setDescription('Create the pool, optionally pre-seeded with players');
-        for (let i = 1; i <= 10; i++) {
-            sub.addStringOption(o =>
-                o.setName(`user${i}`).setDescription(`Player ${i}`).setRequired(false).setAutocomplete(true)
-            );
-        }
         return sub;
     })
     .addSubcommand(sub =>
@@ -254,7 +249,7 @@ async function handleCreate(interaction) {
 
     if (users.length === 0) {
         const msg = await interaction.reply({
-            content: '✅ React below to join the five-stack pool! (open for 10 minutes)',
+            content: '✅ React below to join the five-stack pool! (open for 10 minutes) [@valorant]',
             fetchReply: true,
         });
         await msg.react('✅');
