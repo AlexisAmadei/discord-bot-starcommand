@@ -1,6 +1,6 @@
-# StarCommand
+# KIWI (formerly StarCommand)
 
-StarCommand is a Discord bot designed to enhance server management and provide fun, utility, and customization features. With a variety of slash commands, it simplifies server administration and adds engaging activities for users.
+KIWI is a Discord bot designed to enhance server management and provide fun, utility, and customization features. With a variety of slash commands, it simplifies server administration and adds engaging activities for users.
 
 ## Features
 
@@ -15,8 +15,9 @@ For a detailed list of all available slash commands, check out the [Slash Comman
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/starcommand.git
-   cd starcommand
+   git clone https://github.com/AlexisAmadei/kiwi-discord-bot
+   cd kiwi-discord-bot/apps/bot
+   ```
 
 2. Install dependencies
    ```bash
@@ -36,4 +37,4 @@ For a detailed list of all available slash commands, check out the [Slash Comman
 Contributions are welcome! Feel free to open issues or submit pull requests to improve the bot.
 
 ## Contact
-For questions or support, contact me at kiwi.dev2024@gmail.com
+For questions or support, contact me at custom@kiwidev.fr

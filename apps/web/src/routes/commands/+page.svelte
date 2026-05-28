@@ -1,4 +1,6 @@
 <script lang="ts">
+	import logo from '$lib/assets/logo.png';
+
 	type Command = {
 		name: string;
 		description: string;
@@ -104,10 +106,10 @@
 </script>
 
 <svelte:head>
-	<title>Commands — StarCommand</title>
+	<title>Commands — KIWI</title>
 	<meta
 		name="description"
-		content="The full list of StarCommand slash commands — server management, voice hubs, utility, and fun."
+		content="The full list of KIWI slash commands — server management, voice hubs, utility, and fun."
 	/>
 </svelte:head>
 
@@ -117,11 +119,12 @@
 			href="/"
 			class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition hover:text-slate-200"
 		>
+			<img src={logo} alt="" class="h-6 w-6 rounded-full" aria-hidden="true" />
 			<span aria-hidden="true">&larr;</span> Back to home
 		</a>
 		<h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">Commands</h1>
 		<p class="mt-4 max-w-2xl text-lg text-slate-300">
-			Every slash command StarCommand exposes, grouped by what they do.
+			Every slash command KIWI exposes, grouped by what they do.
 		</p>
 	</section>
 
@@ -154,7 +157,7 @@
 
 	<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
 		<div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
-			<span>StarCommand &middot; Built with SvelteKit</span>
+			<span>KIWI &middot; Built with SvelteKit</span>
 			<a href="/terms" class="hover:text-slate-300">Terms</a>
 			<a href="/privacy" class="hover:text-slate-300">Privacy</a>
 		</div>

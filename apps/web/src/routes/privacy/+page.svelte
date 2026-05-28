@@ -1,10 +1,12 @@
 <script lang="ts">
+	import logo from '$lib/assets/logo.png';
+
 	const lastUpdated = '2026-05-28';
 
 	const sections = [
 		{
 			title: '1. Overview',
-			body: 'This Privacy Policy explains what data the StarCommand Discord bot processes when you use it. StarCommand only handles the information strictly necessary to respond to slash commands and to power features that require persistence (such as scheduled reminders and Clash of Clans account links).'
+			body: 'This Privacy Policy explains what data the KIWI Discord bot processes when you use it. KIWI only handles the information strictly necessary to respond to slash commands and to power features that require persistence (such as scheduled reminders and Clash of Clans account links).'
 		},
 		{
 			title: '2. Data we process in transit',
@@ -16,7 +18,7 @@
 		},
 		{
 			title: '4. Data we do not collect',
-			body: 'StarCommand does not read or store the content of regular messages in your server. It does not log private conversations, direct messages, or message history. It does not sell, share, or transfer data to advertisers, and does not use your data for profiling or analytics.'
+			body: 'KIWI does not read or store the content of regular messages in your server. It does not log private conversations, direct messages, or message history. It does not sell, share, or transfer data to advertisers, and does not use your data for profiling or analytics.'
 		},
 		{
 			title: '5. Retention',
@@ -24,11 +26,11 @@
 		},
 		{
 			title: '6. Third-party services',
-			body: 'The /coc commands query the official Clash of Clans API (run by Supercell) using the clan or player tags you provide. The tags are sent to that API and Supercell\'s own privacy terms apply to that interaction. StarCommand only stores the identifiers and lightweight metadata listed in section 3 — not the full responses returned by the API.'
+			body: 'The /coc commands query the official Clash of Clans API (run by Supercell) using the clan or player tags you provide. The tags are sent to that API and Supercell\'s own privacy terms apply to that interaction. KIWI only stores the identifiers and lightweight metadata listed in section 3 — not the full responses returned by the API.'
 		},
 		{
 			title: '7. Permissions',
-			body: 'When added to a server, StarCommand requests Discord permissions necessary for its features (such as managing channels, roles, and invites, and sending messages for reminders). These permissions are used solely to execute the commands invoked by authorized server members and to deliver scheduled reminders to the channel you configured.'
+			body: 'When added to a server, KIWI requests Discord permissions necessary for its features (such as managing channels, roles, and invites, and sending messages for reminders). These permissions are used solely to execute the commands invoked by authorized server members and to deliver scheduled reminders to the channel you configured.'
 		},
 		{
 			title: '8. Your rights',
@@ -36,7 +38,7 @@
 		},
 		{
 			title: '9. Children',
-			body: 'StarCommand is intended for use on Discord, which requires users to meet Discord\'s minimum age requirements. The bot is not directed at children below those age limits.'
+			body: 'KIWI is intended for use on Discord, which requires users to meet Discord\'s minimum age requirements. The bot is not directed at children below those age limits.'
 		},
 		{
 			title: '10. Changes to this policy',
@@ -50,10 +52,10 @@
 </script>
 
 <svelte:head>
-	<title>Privacy Policy — StarCommand</title>
+	<title>Privacy Policy — KIWI</title>
 	<meta
 		name="description"
-		content="Privacy Policy for the StarCommand Discord bot — what data is processed and how."
+		content="Privacy Policy for the KIWI Discord bot — what data is processed and how."
 	/>
 </svelte:head>
 
@@ -63,12 +65,13 @@
 			href="/"
 			class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition hover:text-slate-200"
 		>
+			<img src={logo} alt="" class="h-6 w-6 rounded-full" aria-hidden="true" />
 			<span aria-hidden="true">&larr;</span> Back to home
 		</a>
 		<h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">Privacy Policy</h1>
 		<p class="mt-4 text-sm text-slate-500">Last updated: {lastUpdated}</p>
 		<p class="mt-6 text-lg text-slate-300">
-			How StarCommand handles the data it sees when you use its slash commands.
+			How KIWI handles the data it sees when you use its slash commands.
 		</p>
 	</section>
 
@@ -82,6 +85,6 @@
 	</section>
 
 	<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
-		StarCommand &middot; Built with SvelteKit
+		KIWI &middot; Built with SvelteKit
 	</footer>
 </main>

@@ -1,4 +1,7 @@
 <script lang="ts">
+	import logo from '$lib/assets/logo.png';
+	import banner from '$lib/assets/banner.png';
+
 	const features = [
 		{
 			title: 'Server management',
@@ -24,19 +27,38 @@
 </script>
 
 <svelte:head>
-	<title>StarCommand — Discord bot for community servers</title>
+	<title>KIWI — Discord bot for community servers</title>
 	<meta
 		name="description"
-		content="StarCommand is a Discord bot for server management, voice hubs, utility commands, and fun."
+		content="KIWI is a Discord bot for server management, voice hubs, utility commands, and fun."
 	/>
 </svelte:head>
 
 <main class="min-h-screen bg-slate-950 text-slate-100">
-	<section class="mx-auto max-w-5xl px-6 pt-24 pb-20 text-center">
+	<!-- nav -->
+	<header class="mx-auto flex max-w-5xl items-center justify-between px-6 pt-6">
+		<a href="/" class="flex items-center gap-3">
+			<img src={logo} alt="Eat Kiwi logo" class="h-10 w-10 rounded-full" />
+			<span class="font-semibold text-white">KIWI</span>
+		</a>
+		<nav class="flex gap-6 text-sm text-slate-400">
+			<a href="/commands" class="transition hover:text-slate-200">Commands</a>
+			<a href="/terms" class="transition hover:text-slate-200">Terms</a>
+			<a href="/privacy" class="transition hover:text-slate-200">Privacy</a>
+		</nav>
+	</header>
+
+	<!-- hero -->
+	<section class="mx-auto max-w-5xl px-6 pt-16 pb-20 text-center">
+		<img
+			src={banner}
+			alt="Eat Kiwi by kiwidev"
+			class="mx-auto mb-10 w-full max-w-2xl rounded-2xl shadow-2xl"
+		/>
 		<p class="mb-4 text-sm font-semibold tracking-widest text-indigo-400 uppercase">
 			Discord bot
 		</p>
-		<h1 class="text-5xl font-bold tracking-tight sm:text-6xl">StarCommand</h1>
+		<h1 class="text-5xl font-bold tracking-tight sm:text-6xl">KIWI</h1>
 		<p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
 			A Discord bot designed to enhance server management with utility, creation, and fun
 			commands — built for communities that want a little more out of their server.
@@ -71,7 +93,7 @@
 
 	<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
 		<div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
-			<span>StarCommand &middot; Built with SvelteKit</span>
+			<span>KIWI &middot; Built with SvelteKit</span>
 			<a href="/terms" class="hover:text-slate-300">Terms</a>
 			<a href="/privacy" class="hover:text-slate-300">Privacy</a>
 		</div>

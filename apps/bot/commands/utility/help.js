@@ -7,7 +7,7 @@ const embed = {
     fields: [
         {
             name: "Documentation",
-            value: "Visit [GitHub Repository](https://github.com/AlexisAmadei/discord-starcommand) to see the docs and list of commands."
+            value: "Visit [GitHub Repository](https://github.com/AlexisAmadei/kiwi-discord-bot) to see the docs and list of commands."
         }
     ]
 };

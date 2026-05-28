@@ -1,6 +1,6 @@
 module.exports = {
 	apps : [{
-		name : "starcommand",
+		name : "discord-kiwi",
 		script : "./index.js",
 		watch: true,
 		ignore_watch : ["node_modules"]

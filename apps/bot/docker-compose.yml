@@ -1,16 +1,16 @@
 services:
-  starcommand:
+  discord-kiwi:
     build: .
-    container_name: starcommand
+    container_name: discord-kiwi
     restart: unless-stopped
     env_file:
       - .env
     volumes:
-      - starcommand-data:/app/data
+      - discord-kiwi-data:/app/data
     environment:
       - VOICE_HUB_STORE=/app/data/voiceHubs.json
     stdin_open: true
     tty: true
 
 volumes:
-  starcommand-data:
+  discord-kiwi-data:
