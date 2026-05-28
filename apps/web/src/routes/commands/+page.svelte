@@ -153,6 +153,10 @@
 	</section>
 
 	<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
-		StarCommand &middot; Built with SvelteKit
+		<div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+			<span>StarCommand &middot; Built with SvelteKit</span>
+			<a href="/terms" class="hover:text-slate-300">Terms</a>
+			<a href="/privacy" class="hover:text-slate-300">Privacy</a>
+		</div>
 	</footer>
 </main>
