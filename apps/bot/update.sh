@@ -23,7 +23,6 @@ trap 'die "Unexpected error on line $LINENO"' ERR
 log "Updating the bot application..."
 
 run_step "Pulling latest changes" git pull origin main
-run_step "Installing dependencies" npm install
 
 run_step "Stopping containers" sudo docker compose down
 run_step "Building containers" sudo docker compose build
