@@ -65,7 +65,7 @@
 		</p>
 		<div class="mt-10 flex flex-wrap justify-center gap-4">
 			<a
-				href="https://github.com/"
+				href="https://discord.com/oauth2/authorize?client_id=1509636164582113360"
 				class="rounded-lg bg-indigo-500 px-6 py-3 font-medium text-white transition hover:bg-indigo-400"
 			>
 				Add to your server
